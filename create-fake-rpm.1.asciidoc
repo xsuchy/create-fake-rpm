@@ -1,0 +1,30 @@
+create-fake-rpm(1)
+=================
+:man source:  create-fake-rpm
+:man manual:  Create Fake RPM
+
+NAME
+----
+create-fake-rpm - generate fake (S)RPM.
+
+
+SYNOPSIS
+--------
+*create-fake-rpm* [--help] [--version=VERSION] [--release=RELEASE] [--build] PROVIDES [PACKAGE_NAME]
+
+
+DESCRIPTION
+-----------
+
+TBD
+
+
+BUGS
+----
+If you experience some problem, please report it at: https://github.com/xsuchy/create-fake-rpm/issues
+
+
+AUTHOR
+------
+Miroslav Suchý <msuchy@redhat.com>
+

@@ -1,0 +1,48 @@
+#!/usr/bin/bash
+
+TEMPLATEDIR=./template/
+VERSION=0
+RELEASE=0
+TARGET="-bs"
+
+# parse command line options
+for i in "$@"; do
+  case $i in
+    --help)
+    OPTS_HELP=YES
+    shift # past argument
+    ;;
+    --version=*)
+    VERSION="${i#*=}"
+    shift # past argument
+    ;;
+    --release=*)
+    RELEASE="${i#*=}"
+    shift # past argument
+    ;;
+    --build)
+    TARGET="-ba"
+    shift # past argument
+    ;;
+    *)
+          # unknown option
+    ;;
+  esac
+done
+
+if [ -n "$OPTS_HELP" ]; then
+  man create-fake-rpm | cat
+  exit 0;
+fi
+
+PROVIDES=$1
+NAME=$2
+
+if [ -z "$NAME" ]; then
+  echo "Info: name of the package is not specified. Using '$PROVIDES'."
+  NAME=$PROVIDES
+fi
+
+rpmbuild --define="fake_name $NAME" --define="fake_provides $PROVIDES" --define="fake_version $VERSION" --define="fake_release $RELEASE" "$TARGET" "$TEMPLATEDIR/template.spec"
+
+
