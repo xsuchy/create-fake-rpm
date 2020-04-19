@@ -43,6 +43,10 @@ if [ -z "$NAME" ]; then
   NAME=$PROVIDES
 fi
 
+# Do not change this!
+# For the sake of all people working on a support.
+NAME="fake-$NAME"
+
 rpmbuild --define="fake_name $NAME" --define="fake_provides $PROVIDES" --define="fake_version $VERSION" --define="fake_release $RELEASE" "$TARGET" "$TEMPLATEDIR/template.spec"
 
 
