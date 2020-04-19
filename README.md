@@ -7,18 +7,18 @@ This script creates empty RPM package to satisfy the dependencies.
 It may be useful when you install some library/module/application manually - without having an RPM package.
 E.g., when you
 
-  pip install somepackage
+    pip install somepackage
 
 And when some RPM package `Requires: python-somepackage` then /usr/bin/rpm refuses to install such package,
 because `python-somepackage` is not present on your system.
 RPMDB does not know what you know. So you can run:
 
-  create-fake-rpm --build python-somepackage python3dist(somepackage)
+    create-fake-rpm --build python-somepackage python3dist(somepackage)
 
 This create package `fake-python-somepackage-0-0.noarch.rpm` which provides: "python-somepackage" and "python3dist(somepackage)".
 You can install it using:
 
-  dnf install fake-python-somepackage-0-0.noarch.rpm
+    dnf install fake-python-somepackage-0-0.noarch.rpm
 
 !!!! WARNING !!!!
 
