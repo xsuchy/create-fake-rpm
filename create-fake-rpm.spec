@@ -16,7 +16,7 @@ BuildRequires:  asciidoc
 BuildRequires:  libxslt
 
 %description
-Tool to generate an (s)rpm with faked provides.
+A tool to generate an (s)rpm with faked provides.
 
 %prep
 %setup -q
