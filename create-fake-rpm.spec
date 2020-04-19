@@ -1,6 +1,6 @@
 Name:           create-fake-rpm
-Version:        0
-Release:        0%{?dist}
+Version:        1
+Release:        1%{?dist}
 License:        GPLv2+
 Summary:        Generate fake (S)RPM
 BuildArch:      noarch
@@ -41,4 +41,6 @@ cp -a template/template.spec %{buildroot}%{_datadir}/%{name}/
 %{_datadir}/%{name}
 
 %changelog
+* Sun Apr 19 2020 Miroslav Suchý <miroslav@suchy.cz> 1-1
+- initial release
 
