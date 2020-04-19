@@ -35,13 +35,8 @@ if [ -n "$OPTS_HELP" ]; then
   exit 0;
 fi
 
-PROVIDES=$1
-NAME=$2
-
-if [ -z "$NAME" ]; then
-  echo "Info: name of the package is not specified. Using '$PROVIDES'."
-  NAME=$PROVIDES
-fi
+NAME=$1
+PROVIDES=$2
 
 # Do not change this!
 # For the sake of all people working on a support.

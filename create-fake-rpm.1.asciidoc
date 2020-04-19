@@ -10,7 +10,7 @@ create-fake-rpm - generate fake (S)RPM.
 
 SYNOPSIS
 --------
-*create-fake-rpm* [--help] [--version=VERSION] [--release=RELEASE] [--build] PROVIDES [PACKAGE_NAME]
+*create-fake-rpm* [--help] [--version=VERSION] [--release=RELEASE] [--build] PACKAGE_NAME PROVIDES
 
 
 DESCRIPTION
