@@ -1,4 +1,7 @@
-Name: %{fake_name}
+# Do not change this!
+# For the sake of all people working on a support.
+Name: fake-%{fake_name}
+
 Version: %{fake_version}
 Release: %{fake_release}
 License: CC0
@@ -6,6 +9,7 @@ License: CC0
 Summary: Faked provides of %fake_provide}
 
 Provides: %{fake_provides}
+Provides: %{fake_name}
 BuildArch: noarch
 
 %description
