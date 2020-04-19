@@ -38,6 +38,13 @@ fi
 NAME=$1
 PROVIDES=$2
 
-rpmbuild --define="fake_name $NAME" --define="fake_provides $PROVIDES" --define="fake_version $VERSION" --define="fake_release $RELEASE" "$TARGET" "$TEMPLATEDIR/template.spec"
+rpmbuild --define="fake_name $NAME" --define="fake_provides $PROVIDES" \
+        --define="fake_version $VERSION" --define="fake_release $RELEASE" \
+        --define "_sourcedir $PWD" \
+        --define "_rpmdir $PWD" \
+        --define "_specdir $PWD" \
+        --define "_builddir $PWD" \
+        --define "_srcrpmdir $PWD" \
+        "$TARGET" "$TEMPLATEDIR/template.spec"
 
 

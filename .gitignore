@@ -126,3 +126,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+noarch/
+*.src.rpm
