@@ -1,5 +1,5 @@
 Name:           create-fake-rpm
-Version:        1
+Version:        0
 Release:        0%{?dist}
 License:        GPLv2+
 Summary:        Generate fake (S)RPM
