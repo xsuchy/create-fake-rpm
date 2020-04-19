@@ -9,6 +9,7 @@ BuildArch:      noarch
 # cd create-fake-rpm
 # tito build --tgz
 Source0:        %{name}-%{version}.tar.gz
+URL:            https://github.com/xsuchy/create-fake-rpm
 
 Requires:       rpm-build
 BuildRequires:  asciidoc
