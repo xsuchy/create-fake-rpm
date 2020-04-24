@@ -1,5 +1,5 @@
 Name:           create-fake-rpm
-Version:        1
+Version:        2
 Release:        1%{?dist}
 License:        GPLv2+
 Summary:        Generate fake (S)RPM
@@ -62,6 +62,10 @@ cp -a template/template.spec %{buildroot}%{_datadir}/%{name}/
 %{_datadir}/%{name}
 
 %changelog
+* Fri Apr 24 2020 Miroslav Suchý <miroslav@suchy.cz> 2-1
+- extend description in spec
+- preserve timestamp
+
 * Sun Apr 19 2020 Miroslav Suchý <miroslav@suchy.cz> 1-1
 - initial release
 
