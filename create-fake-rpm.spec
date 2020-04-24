@@ -29,8 +29,8 @@ sed -i 's|^TEMPLATEDIR=.*|TEMPLATEDIR=%{_datadir}/%{name}/|' create-fake-rpm
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_mandir}/man1
 mkdir -p %{buildroot}%{_datadir}/%{name}
-install -m755 create-fake-rpm %{buildroot}%{_bindir}
-install -m644 create-fake-rpm.1 %{buildroot}/%{_mandir}/man1/
+install -m755 -p create-fake-rpm %{buildroot}%{_bindir}
+install -m644 -p create-fake-rpm.1 %{buildroot}/%{_mandir}/man1/
 cp -a template/template.spec %{buildroot}%{_datadir}/%{name}/
 
 %files
