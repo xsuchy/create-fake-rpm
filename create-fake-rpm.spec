@@ -1,5 +1,5 @@
 Name:           create-fake-rpm
-Version:        2
+Version:        3
 Release:        1%{?dist}
 License:        GPLv2+
 Summary:        Generate fake (S)RPM
@@ -62,6 +62,10 @@ cp -a template/template.spec %{buildroot}%{_datadir}/%{name}/
 %{_datadir}/%{name}
 
 %changelog
+* Sat Oct 17 2020 Miroslav Suchý <msuchy@redhat.com> 3-1
+- better example (msuchy@redhat.com)
+- implement --print-output (msuchy@redhat.com)
+
 * Fri Apr 24 2020 Miroslav Suchý <miroslav@suchy.cz> 2-1
 - extend description in spec
 - preserve timestamp
