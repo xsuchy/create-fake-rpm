@@ -10,7 +10,7 @@ create-fake-rpm - generate fake (S)RPM.
 
 SYNOPSIS
 --------
-*create-fake-rpm* [--help] [--version=VERSION] [--release=RELEASE] [--build] PACKAGE_NAME PROVIDES
+*create-fake-rpm* [--help] [--print-output] [--version=VERSION] [--release=RELEASE] [--build] PACKAGE_NAME PROVIDES
 
 
 DESCRIPTION
@@ -48,6 +48,8 @@ OPTIONS
 --release=RELEASE - you can specify RELEASE of your package. Default is 0.
 
 --build - create an RPM package. Without this option, only SRC.RPM package will be created.
+
+--print-result - just print resulting binary package. Without this option, full rpmbuild output is print.
 
 SEE ALSO
 --------

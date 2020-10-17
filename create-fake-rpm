@@ -4,6 +4,7 @@ TEMPLATEDIR=./template/
 VERSION=0
 RELEASE=0
 TARGET="-bs"
+PRINT_RESULT=0
 
 # parse command line options
 for i in "$@"; do
@@ -24,6 +25,10 @@ for i in "$@"; do
     TARGET="-ba"
     shift # past argument
     ;;
+    --print-result)
+    PRINT_RESULT=1
+    shift
+    ;;
     *)
           # unknown option
     ;;
@@ -38,13 +43,18 @@ fi
 NAME=$1
 PROVIDES=$2
 
-rpmbuild --define="fake_name $NAME" --define="fake_provides $PROVIDES" \
+OUTPUT=$( rpmbuild --define="fake_name $NAME" --define="fake_provides $PROVIDES" \
         --define="fake_version $VERSION" --define="fake_release $RELEASE" \
         --define "_sourcedir $PWD" \
         --define "_rpmdir $PWD" \
         --define "_specdir $PWD" \
         --define "_builddir $PWD" \
         --define "_srcrpmdir $PWD" \
-        "$TARGET" "$TEMPLATEDIR/template.spec"
+        "$TARGET" "$TEMPLATEDIR/template.spec" 2>/dev/null \
+)
 
-
+if [ "$PRINT_RESULT" -eq 1 ]; then
+    echo "$OUTPUT" | grep noarch.rpm
+else
+    echo "$OUTPUT"
+fi
