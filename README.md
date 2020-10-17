@@ -13,7 +13,7 @@ And when some RPM package `Requires: python-somepackage` then /usr/bin/rpm refus
 because `python-somepackage` is not present on your system.
 RPMDB does not know what you know. So you can run:
 
-    create-fake-rpm --build python-somepackage python3dist(somepackage)
+    create-fake-rpm --build python-somepackage 'python3dist(somepackage)'
 
 This create package `fake-python-somepackage-0-0.noarch.rpm` which provides: "python-somepackage" and "python3dist(somepackage)".
 You can install it using:
