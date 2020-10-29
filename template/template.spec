@@ -6,7 +6,7 @@ Version: %{fake_version}
 Release: %{fake_release}
 License: CC0
 
-Summary: Faked provides of %fake_provide}
+Summary: Faked provides of %{fake_provides}
 
 Provides: %{fake_provides}
 Provides: %{fake_name}
