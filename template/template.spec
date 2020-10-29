@@ -9,7 +9,7 @@ License: CC0
 Summary: Faked provides of %fake_provide}
 
 Provides: %{fake_provides}
-Provides: %{fake_name}
+Provides: fake-%{fake_name}
 BuildArch: noarch
 
 %description
