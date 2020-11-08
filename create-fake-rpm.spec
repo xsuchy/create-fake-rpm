@@ -1,5 +1,5 @@
 Name:           create-fake-rpm
-Version:        3
+Version:        4
 Release:        1%{?dist}
 License:        GPLv2+
 Summary:        Generate fake (S)RPM
@@ -62,6 +62,10 @@ cp -a template/template.spec %{buildroot}%{_datadir}/%{name}/
 %{_datadir}/%{name}
 
 %changelog
+* Sun Nov 08 2020 Miroslav Suchý <msuchy@redhat.com> 4-1
+- print error when there is no params
+- Update template.spec (me@stei.gr)
+
 * Sat Oct 17 2020 Miroslav Suchý <msuchy@redhat.com> 3-1
 - better example (msuchy@redhat.com)
 - implement --print-output (msuchy@redhat.com)
