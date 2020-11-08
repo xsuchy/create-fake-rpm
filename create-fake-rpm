@@ -43,6 +43,11 @@ fi
 NAME=$1
 PROVIDES=$2
 
+if [ -z "$NAME" -o -z "$PROVIDES" ]; then
+  echo "Error: You have to specify PACKAGE_NAME and PROVIDES."
+  exit 1
+fi
+
 OUTPUT=$( rpmbuild --define="fake_name $NAME" --define="fake_provides $PROVIDES" \
         --define="fake_version $VERSION" --define="fake_release $RELEASE" \
         --define "_sourcedir $PWD" \
