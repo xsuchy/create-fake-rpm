@@ -5,6 +5,7 @@ VERSION=0
 RELEASE=0
 TARGET="-bs"
 PRINT_RESULT=0
+REQUIRES=""
 
 # parse command line options
 for i in "$@"; do
@@ -19,6 +20,10 @@ for i in "$@"; do
     ;;
     --release=*)
     RELEASE="${i#*=}"
+    shift # past argument
+    ;;
+    --requires=*)
+    REQUIRES+=" ${i#*=}"
     shift # past argument
     ;;
     --build)
@@ -56,6 +61,7 @@ echo "%{!?fake_name: %global fake_name $NAME}" >>${SPECFILE}
 echo "%{!?fake_version: %global fake_version $VERSION}" >>${SPECFILE}
 echo "%{!?fake_release: %global fake_release $RELEASE}" >>${SPECFILE}
 echo "%{!?fake_provides: %global fake_provides $PROVIDES}" >>${SPECFILE}
+echo "%{!?fake_requires: %global fake_requires $REQUIRES}" >>${SPECFILE}
 cat "$TEMPLATEDIR/template.spec" >>${SPECFILE}
 
 OUTPUT=$( rpmbuild \
