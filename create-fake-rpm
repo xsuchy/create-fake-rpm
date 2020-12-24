@@ -48,14 +48,23 @@ if [ -z "$NAME" -o -z "$PROVIDES" ]; then
   exit 1
 fi
 
-OUTPUT=$( rpmbuild --define="fake_name $NAME" --define="fake_provides $PROVIDES" \
-        --define="fake_version $VERSION" --define="fake_release $RELEASE" \
+SPECFILE=${PWD}/${NAME}.spec
+rm -f ${SPECFILE}
+touch ${SPECFILE}
+
+echo "%{!?fake_name: %global fake_name $NAME}" >>${SPECFILE}
+echo "%{!?fake_version: %global fake_version $VERSION}" >>${SPECFILE}
+echo "%{!?fake_release: %global fake_release $RELEASE}" >>${SPECFILE}
+echo "%{!?fake_provides: %global fake_provides $PROVIDES}" >>${SPECFILE}
+cat "$TEMPLATEDIR/template.spec" >>${SPECFILE}
+
+OUTPUT=$( rpmbuild \
         --define "_sourcedir $PWD" \
         --define "_rpmdir $PWD" \
         --define "_specdir $PWD" \
         --define "_builddir $PWD" \
         --define "_srcrpmdir $PWD" \
-        "$TARGET" "$TEMPLATEDIR/template.spec" 2>/dev/null \
+        "$TARGET" "${SPECFILE}" 2>/dev/null \
 )
 
 if [ "$PRINT_RESULT" -eq 1 ]; then
