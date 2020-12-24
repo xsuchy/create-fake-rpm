@@ -10,6 +10,9 @@ Summary: Faked provides of %{fake_provides}
 
 Provides: %{fake_provides}
 Provides: %{fake_name}
+%if "%{?fake_requires}" != ""
+Requires: %{fake_requires}
+%endif
 BuildArch: noarch
 
 %description
