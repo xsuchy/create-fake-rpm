@@ -27,6 +27,10 @@ Do not use this tool unless you know what you are doing.
 And if you know what you are doing - then think twice before you use it.
 You can easily destroy your machine with this tool.
 
+## Packaging status
+
+![create-fake-rpm versions](https://repology.org/badge/vertical-allrepos/create-fake-rpm.svg?exclude_unsupported=1&header=create-fake-rpm)
+
 LICENSE
 -------
 
