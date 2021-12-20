@@ -61,7 +61,9 @@ echo "%{!?fake_name: %global fake_name $NAME}" >>${SPECFILE}
 echo "%{!?fake_version: %global fake_version $VERSION}" >>${SPECFILE}
 echo "%{!?fake_release: %global fake_release $RELEASE}" >>${SPECFILE}
 echo "%{!?fake_provides: %global fake_provides $PROVIDES}" >>${SPECFILE}
-echo "%{!?fake_requires: %global fake_requires $REQUIRES}" >>${SPECFILE}
+if [ -n "$REQUIRES" ]; then
+  echo "%{!?fake_requires: %global fake_requires $REQUIRES}" >>${SPECFILE}
+fi
 cat "$TEMPLATEDIR/template.spec" >>${SPECFILE}
 
 OUTPUT=$( rpmbuild \
