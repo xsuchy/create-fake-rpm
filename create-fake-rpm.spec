@@ -1,5 +1,5 @@
 Name:           create-fake-rpm
-Version:        4
+Version:        5
 Release:        1%{?dist}
 License:        GPL-2.0-or-later
 Summary:        Generate fake (S)RPM
@@ -62,6 +62,14 @@ cp -a template/template.spec %{buildroot}%{_datadir}/%{name}/
 %{_datadir}/%{name}
 
 %changelog
+* Tue Nov 29 2022 Miroslav Suchý <msuchy@redhat.com> 5-1
+- use SPDX format for license
+- accept empty requires
+- Document --requires option (pgreco@centosproject.org)
+- Allow fake-rpm to require a real one (pgreco@centosproject.org)
+- Fix argument name in docs (pgreco@centosproject.org)
+- Make srpm self contained (pgreco@centosproject.org)
+
 * Sun Nov 08 2020 Miroslav Suchý <msuchy@redhat.com> 4-1
 - print error when there is no params
 - Update template.spec (me@stei.gr)
