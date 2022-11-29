@@ -1,7 +1,7 @@
 Name:           create-fake-rpm
 Version:        4
 Release:        1%{?dist}
-License:        GPLv2+
+License:        GPL-2.0-or-later
 Summary:        Generate fake (S)RPM
 BuildArch:      noarch
 # Sources can be obtained by
